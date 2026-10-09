@@ -2,7 +2,7 @@
 
 //==== Configuração e estado ====
 
-const API_URL = "/api";
+const API_URL = "https://stockflow-api-vrs2.onrender.com";
 const LIMITE_ESTOQUE_BAIXO = 10;
 
 let usuario = localStorage.getItem("stockflow_usuario") || "Ítalo";
