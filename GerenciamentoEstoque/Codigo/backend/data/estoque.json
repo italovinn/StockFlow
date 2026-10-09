@@ -1,0 +1,214 @@
+{
+    "produtos": [
+        {
+            "categoria": "Periféricos",
+            "codigo": "001",
+            "nome": "Mouse Gamer",
+            "preco": 89.9,
+            "quantidade": 14
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "002",
+            "nome": "Teclado Mecânico",
+            "preco": 249.9,
+            "quantidade": 67
+        },
+        {
+            "categoria": "Monitores",
+            "codigo": "003",
+            "nome": "Monitor 24",
+            "preco": 799.9,
+            "quantidade": 1
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "004",
+            "nome": "Mouse Sem Fio",
+            "preco": 59.9,
+            "quantidade": 35
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "005",
+            "nome": "Teclado Membrana",
+            "preco": 79.9,
+            "quantidade": 8
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "006",
+            "nome": "Headset Gamer",
+            "preco": 159.9,
+            "quantidade": 24
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "007",
+            "nome": "Mousepad Grande",
+            "preco": 49.9,
+            "quantidade": 0
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "008",
+            "nome": "Webcam Full HD",
+            "preco": 189.9,
+            "quantidade": 12
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "009",
+            "nome": "Microfone USB",
+            "preco": 219.9,
+            "quantidade": 6
+        },
+        {
+            "categoria": "Periféricos",
+            "codigo": "010",
+            "nome": "Caixa de Som USB",
+            "preco": 99.9,
+            "quantidade": 18
+        },
+        {
+            "categoria": "Monitores",
+            "codigo": "011",
+            "nome": "Monitor 27 Full HD",
+            "preco": 1099.9,
+            "quantidade": 15
+        },
+        {
+            "categoria": "Monitores",
+            "codigo": "012",
+            "nome": "Monitor 24 IPS",
+            "preco": 899.9,
+            "quantidade": 7
+        },
+        {
+            "categoria": "Monitores",
+            "codigo": "013",
+            "nome": "Monitor Gamer 165Hz",
+            "preco": 1499.9,
+            "quantidade": 9
+        },
+        {
+            "categoria": "Monitores",
+            "codigo": "014",
+            "nome": "Monitor Ultrawide",
+            "preco": 2199.9,
+            "quantidade": 4
+        },
+        {
+            "categoria": "Monitores",
+            "codigo": "015",
+            "nome": "Monitor 32 4K",
+            "preco": 2799.9,
+            "quantidade": 11
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "016",
+            "nome": "Processador Ryzen 5",
+            "preco": 999.9,
+            "quantidade": 14
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "017",
+            "nome": "Processador Core i5",
+            "preco": 1199.9,
+            "quantidade": 5
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "018",
+            "nome": "Placa de Vídeo RTX 4060",
+            "preco": 2299.9,
+            "quantidade": 3
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "019",
+            "nome": "Placa-Mãe B550",
+            "preco": 749.9,
+            "quantidade": 11
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "020",
+            "nome": "Memória RAM 16GB",
+            "preco": 249.9,
+            "quantidade": 42
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "021",
+            "nome": "Memória RAM 8GB",
+            "preco": 129.9,
+            "quantidade": 2
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "022",
+            "nome": "Fonte 650W",
+            "preco": 399.9,
+            "quantidade": 16
+        },
+        {
+            "categoria": "Componentes",
+            "codigo": "023",
+            "nome": "Gabinete Gamer",
+            "preco": 349.9,
+            "quantidade": 20
+        },
+        {
+            "categoria": "Armazenamento",
+            "codigo": "024",
+            "nome": "SSD 240GB",
+            "preco": 149.9,
+            "quantidade": 30
+        },
+        {
+            "categoria": "Armazenamento",
+            "codigo": "025",
+            "nome": "SSD 1TB",
+            "preco": 399.9,
+            "quantidade": 22
+        },
+        {
+            "categoria": "Armazenamento",
+            "codigo": "026",
+            "nome": "HD 1TB",
+            "preco": 279.9,
+            "quantidade": 6
+        },
+        {
+            "categoria": "Computadores",
+            "codigo": "027",
+            "nome": "PC Gamer Básico",
+            "preco": 3499.9,
+            "quantidade": 8
+        },
+        {
+            "categoria": "Computadores",
+            "codigo": "028",
+            "nome": "Notebook Empresarial",
+            "preco": 2899.9,
+            "quantidade": 13
+        },
+        {
+            "categoria": "Acessórios",
+            "codigo": "029",
+            "nome": "Cabo HDMI 2m",
+            "preco": 29.9,
+            "quantidade": 55
+        },
+        {
+            "categoria": "Acessórios",
+            "codigo": "030",
+            "nome": "Hub USB 4 Portas",
+            "preco": 69.9,
+            "quantidade": 10
+        }
+    ]
+}

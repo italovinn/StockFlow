@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow</title>
+    <link rel="icon" type="image/png" href="./assets/IconeAba.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <div  id="info_empresa">
+            <img src="./assets/Logo.png" alt="" width="80" height="80">
+            <h1 class="titulo_empresa">StockFlow</h1>
+        </div>
+
+
+        <nav id="sectionbar">
+            <a href="#inicio" data-pagina="inicio" class="ativo">Início</a>
+            <a href="#resumo" data-pagina="resumo">Resumo</a>
+            <a href="#planilha" data-pagina="planilha">Baixar Planilha</a>
+        </nav>
+
+        <div id="perfil">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                width="35" height="35"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FFFFFF"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
+            </svg>
+            <button id="nomeUsuario" type="button" title="Alterar nome">
+                Ítalo
+            </button>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- PÁGINA INICIAL -->
+        <section class="pagina ativa" id="pagina-inicio">
+            <section id="estoque">
+
+                <div class="cabecalho_estoque">
+                    <div>
+                        <h2>Estoque de Produtos</h2>
+                        <p>Gerencie e acompanhe os produtos cadastrados.</p>
+                    </div>
+
+                    <button id="btnAdicionar" type="button">
+                        + Adicionar Produto
+                    </button>
+                </div>
+
+                <div class="barra_pesquisa">
+                    <input type="text" id="pesquisaProduto"
+                        placeholder="Pesquisar produto...">
+                </div>
+
+                <div class="container_tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Produto</th>
+                                <th>Categoria</th>
+                                <th>Quantidade</th>
+                                <th>Preço unitário</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="listaProdutos"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <!-- PÁGINA DE PLANILHA -->
+        <section class="pagina" id="pagina-planilha">
+
+            <div class="painel_planilha">
+
+                <div class="cabecalho_planilha">
+                    <div>
+                        <h2>Exportação de Estoque</h2>
+                        <p>
+                            Gere um relatório organizado dos produtos cadastrados
+                            para controle, conferência e documentação empresarial.
+                        </p>
+                    </div>
+
+                    <div class="icone_planilha">
+                        XLSX
+                    </div>
+                </div>
+
+                <div class="informacoes_planilha">
+
+                    <div class="item_informacao">
+                        <span>Formato do arquivo</span>
+                        <strong>Excel (.xlsx)</strong>
+                    </div>
+
+                    <div class="item_informacao">
+                        <span>Organização</span>
+                        <strong>Por categoria</strong>
+                    </div>
+
+                    <div class="item_informacao">
+                        <span>Conteúdo</span>
+                        <strong>Estoque e valores</strong>
+                    </div>
+
+                </div>
+
+                <div class="detalhes_planilha">
+                    <h3>O que estará no relatório?</h3>
+
+                    <ul>
+                        <li>Resumo geral do estoque</li>
+                        <li>Produtos agrupados por categoria</li>
+                        <li>Código, nome, quantidade e preço unitário</li>
+                        <li>Valor total por produto</li>
+                        <li>Subtotais por categoria e total geral</li>
+                        <li>Data e horário de emissão</li>
+                    </ul>
+                </div>
+
+                <div class="acoes_planilha">
+                    <button id="btnBaixarPlanilha" type="button">
+                        <span aria-hidden="true">↓</span>
+                        Baixar relatório Excel
+                    </button>
+
+                    <p id="mensagemPlanilha" role="status" aria-live="polite">
+                        O relatório será gerado com os dados atuais do estoque.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PÁGINA DE RESUMO -->
+        <section class="pagina" id="pagina-resumo">
+            <h2>Resumo do Estoque</h2>
+
+            <div class="cards_resumo">
+                <div class="card_resumo">
+                    <span>Total de produtos cadastrados</span>
+                    <strong id="totalProdutos">0</strong>
+                </div>
+
+                <div class="card_resumo">
+                    <span>Unidades em estoque</span>
+                    <strong id="totalUnidades">0</strong>
+                </div>
+
+                <div class="card_resumo">
+                    <span>Produtos com estoque baixo</span>
+                    <strong id="totalBaixo">0</strong>
+                </div>
+
+                <div class="card_resumo">
+                    <span>Produtos esgotados</span>
+                    <strong id="totalEsgotados">0</strong>
+                </div>
+            </div>
+
+            <div class="grafico-container">
+                <h2>Estatísticas do estoque</h2>
+
+                <div id="areaGraficos"></div>
+            </div>
+
+        </section>
+
+        <!-- MODAL DE CADASTRO E EDIÇÃO DE PRODUTOS -->
+        <div id="modalProduto" class="modal_produto" hidden>
+            <section
+                class="formulario_produto"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="tituloFormulario"
+            >
+                <div class="cabecalho_formulario">
+                    <div>
+                        <span class="etiqueta_formulario">GESTÃO DE ESTOQUE</span>
+                        <h2 id="tituloFormulario">Adicionar produto</h2>
+                        <p>Preencha os dados para cadastrar um produto.</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="btnFecharFormulario"
+                        class="btn_fechar_modal"
+                        aria-label="Fechar formulário"
+                    >×</button>
+                </div>
+
+                <form id="formularioProduto">
+                    <div class="grade_formulario">
+
+                        <div class="campo_formulario">
+                            <label for="produtoCodigo">Código do produto</label>
+                            <input
+                                type="text"
+                                id="produtoCodigo"
+                                placeholder="Gerado automaticamente"
+                                readonly
+                            >
+                            <small>O código é gerado pelo sistema.</small>
+                        </div>
+
+                        <div class="campo_formulario">
+                            <label for="produtoCategoria">Categoria *</label>
+                            <input
+                                type="text"
+                                id="produtoCategoria"
+                                list="categoriasProduto"
+                                placeholder="Ex.: Periféricos"
+                                maxlength="80"
+                                required
+                            >
+                            <datalist id="categoriasProduto">
+                                <option value="Periféricos">
+                                <option value="Monitores">
+                                <option value="Componentes">
+                                <option value="Armazenamento">
+                                <option value="Computadores">
+                                <option value="Acessórios">
+                            </datalist>
+                        </div>
+
+                        <div class="campo_formulario campo_completo">
+                            <label for="produtoNome">Nome do produto *</label>
+                            <input
+                                type="text"
+                                id="produtoNome"
+                                placeholder="Digite o nome do produto"
+                                maxlength="150"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo_formulario">
+                            <label for="produtoQuantidade">Quantidade em estoque *</label>
+                            <input
+                                type="number"
+                                id="produtoQuantidade"
+                                min="0"
+                                step="1"
+                                placeholder="Ex.: 25"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo_formulario">
+                            <label for="produtoPreco">Preço unitário (R$) *</label>
+                            <input
+                                type="number"
+                                id="produtoPreco"
+                                min="0"
+                                step="0.01"
+                                placeholder="Ex.: 149,90"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <p id="mensagemFormulario" class="mensagem_formulario"
+                    role="status" aria-live="polite"></p>
+
+                    <div class="acoes_formulario">
+                        <button
+                            type="button"
+                            id="btnCancelarFormulario"
+                            class="btn_cancelar"
+                        >
+                            Cancelar
+                        </button>
+
+                        <button type="submit" id="btnSalvarProduto" class="btn_salvar">
+                            <span aria-hidden="true">✓</span>
+                            Salvar produto
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
