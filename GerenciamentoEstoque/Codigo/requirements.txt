@@ -1,4 +1,7 @@
+
 Flask
 flask-cors
 matplotlib
 openpyxl
+psycopg[binary]
+gunicorn
